@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate') %>
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="row">
+    <div class="card shadow p-0">
+      <img src="/images/login-image.jpg" alt="" class="card-img-top" />
+      <div class="card-body">
+        <h5 class="card-title fs-3">Register</h5>
+        <form
+          action="/register"
+          method="POST"
+          class="validated-form"
+          novalidate
+        >
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              id="username"
+              required
+              autofocus
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+              required
+            />
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-success">Register</button>
+            <h6 class="card-subtitle text-muted text-center">
+              Already have an account?
+              <a href="/login" class="text-decoration-none">Login</a>
+            </h6>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate') %>
+<div class="text-center">
+  <h1>General</h1>
+</div>
+
+<% if(!templates.length) { %>
+<!-- prettier-ignore -->
+<div class="alert alert-primary text-center" role="alert">
+    Nu ai niciun template in aceasta categorie. <a href="/templates/new" class="link-success text-decoration-none fw-bold">Adauga un template acum</a>
+  </div>
+<% } %>
+<!-- prettier-ignore -->
+<% for (let template of templates) { %>
+<div class="card mb-3 col-8 offset-2">
+  <div class="row px-4">
+    <div class="card-body">
+      <h5 class="card-title"><%= template.title %></h5>
+      <p class="card-text"><%= template.text %></p>
+      <p class="card-text">
+        <small
+          class="text-muted bg-info px-2 border border-secondary rounded-pill"
+          ><%= template.category %>
+        </small>
+      </p>
+      <a
+        href="/templates/<%= template._id %>/edit "
+        class="card-link link-warning"
+        >Edit</a
+      >
+      <form
+        action="/templates/<%= template._id %>?_method=DELETE"
+        method="POST"
+        class="d-inline-block"
+      >
+        <button
+          class="
+            card-link
+            link-danger
+            bg-transparent
+            border-0
+            text-decoration-underline
+          "
+        >
+          Delete
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<% } %>

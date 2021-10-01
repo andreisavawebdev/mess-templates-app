@@ -1,0 +1,41 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="/">MT-App</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <% if(currentUser) { %>
+        <a href="/templates/new" class="nav-link text-info fw-bold"
+          >Add template</a
+        >
+        <a class="nav-link" href="/templates">All Templates</a>
+        <a class="nav-link" href="/templates/general">General</a>
+        <a class="nav-link" href="/templates/factura">Factura</a>
+        <a class="nav-link" href="/templates/abonamente">Abonamente</a>
+        <a class="nav-link" href="/templates/roaming">Roaming</a>
+        <a class="nav-link" href="/templates/myorange">My Orange</a>
+        <a class="nav-link" href="/templates/yoxo">Yoxo</a>
+        <a class="nav-link" href="/templates/retea">Retea</a>
+        <% } %>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <% if(!currentUser) { %>
+        <a href="/login" class="nav-link">Login</a>
+        <a href="/register" class="nav-link">Register</a>
+        <% } else { %>
+        <a href="/logout" class="nav-link">Logout</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -23,8 +23,8 @@ const MongoStore = require('connect-mongo');
 const app = express();
 
 // CONNECT DATABASE /////////////////////
-// const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/mess-templates';
-const dbUrl = 'mongodb://localhost:27017/mess-templates';
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/mess-templates';
+// const dbUrl = 'mongodb://localhost:27017/mess-templates';
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

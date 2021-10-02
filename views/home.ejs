@@ -18,7 +18,11 @@
   <body class="d-flex flex-column vh-100">
     <div class="container text-center">
       <h1 class="text-dark fw-bolder">Mess Templates App</h1>
+      <% if (currentUser) { %>
+      <a href="/templates" class="btn btn-lg btn-outline-dark">GET STARTED!</a>
+      <% } else { %>
       <a href="/login" class="btn btn-lg btn-outline-dark">GET STARTED!</a>
+      <% } %>
     </div>
     <footer class="footer py-3 mt-auto text-center">
       <div class="container">

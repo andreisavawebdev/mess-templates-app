@@ -63,7 +63,6 @@ module.exports.showRetea = catchAsync(async (req, res, next) => {
 });
 
 module.exports.showNewTemplateForm = (req, res) => {
-  console.log(req.originalUrl);
   res.render('templates/new');
 };
 
